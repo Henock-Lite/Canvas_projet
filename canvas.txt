@@ -1,0 +1,45 @@
+// Sélectionne l'élément <canvas> par son ID et obtient le contexte de dessin en 2D
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// Définit la couleur de remplissage en rouge (valeurs RGB allant de 0 à 255)
+ctx.fillStyle = "rgb(255,0,0)"; 
+
+// Dessine un rectangle rempli avec la couleur définie
+// Position du coin supérieur gauche : (10, 10), largeur : 50px, hauteur : 50px
+ctx.fillRect(10, 10, 50, 50); 
+
+// Efface une partie du canvas dans la zone spécifiée
+// Position du coin supérieur gauche : (35, 25), largeur : 40px, hauteur : 40px
+ctx.clearRect(35, 25, 40, 40); 
+
+// Trace un rectangle uniquement avec le contour (sans remplissage)
+// Position du coin supérieur gauche : (125, 75), largeur : 50px, hauteur : 300px
+ctx.strokeRect(125, 75, 50, 300); 
+
+// Démarre un nouveau chemin de dessin
+ctx.beginPath(); 
+
+// Place le point de départ du tracé à la position (150, 300)
+ctx.moveTo(150, 300); 
+
+// Trace une ligne droite à partir du point actuel jusqu'à la position (100, 55)
+ctx.lineTo(100, 55); 
+
+// Trace une autre ligne droite à partir du point actuel jusqu'à la position (80, 25)
+ctx.lineTo(80, 25); 
+
+// Dessine le trait sur le canvas apres lineTo
+ctx.stroke();
+
+// Définit la couleur du trait
+ctx.strokeStyle = "salmon";
+
+// Définit l'épaisseur du trait
+ctx.lineWidth = 10;
+
+// Remplit l'intérieur du chemin tracé avec la couleur de remplissage actuelle
+ctx.fill();
+
+// Récupère les dimensions et la position du canvas par rapport à la fenêtre
+let posimous = canvas.getBoundingClientRect();
